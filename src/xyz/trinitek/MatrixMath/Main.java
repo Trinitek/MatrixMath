@@ -85,6 +85,34 @@ public class Main {
 
         m8.swapColumn(1, 2);
         System.out.println(m8);
+
+        System.out.println("====================");
+
+        double[][] Adata = {{8,2,7}, {8,8,8}, {6,6,6}};
+        Matrix A;
+        try {
+            A = new Matrix(Adata);
+        } catch (MatrixSizeException e) {
+            e.printStackTrace(System.err);
+            return;
+        }
+
+        double[][] Bdata = {{1,2,3}, {4,5,6}, {7,8,9}};
+        Matrix B;
+        try {
+            B = new Matrix(Bdata);
+        } catch (MatrixSizeException e) {
+            e.printStackTrace(System.err);
+            return;
+        }
+
+        System.out.println(A);
+        System.out.println(B);
+        try {
+            System.out.println(Matrix.mul(A, B));
+        } catch (MatrixSizeException e) {
+            e.printStackTrace(System.err);
+        }
     }
 
 }
